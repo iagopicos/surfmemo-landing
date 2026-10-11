@@ -1,0 +1,44 @@
+:root {
+  // Colors
+  --bg-deep-ocean: #0A1628;
+  --bg-night-sea: #0D2137;
+  --bg-dark-wave: #112233;
+
+  --accent-ocean-blue: #00B4D8;
+  --accent-sea-foam: #52B788;
+
+  --text-sea-mist: #F5F0E8;
+  --text-wet-sand: #C9B99A;
+  --text-grey: #7C8A9E;
+
+  --border-subtle: #1E3248;
+
+  // Spacing
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-l: 32px;
+  --spacing-lg: 40px;
+  --spacing-xl: 64px;
+  --spacing-xxl: 80px;
+  --spacing-xxxl: 100px;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 100px;
+
+  --font-xs: 12px;
+  --font-sm: 14px;
+  --font-md: 16px;
+  --font-lg: 18px;
+  --font-xl: 20px;
+  --font-2xl: 24px;
+  --font-3xl: 48px;
+  --font-4xl: 56px;
+  --font-5xl: 72px;
+
+  --font-condensed: "Barlow Condensed", sans-serif;
+  --font-sans: "Inter", sans-serif;
+}

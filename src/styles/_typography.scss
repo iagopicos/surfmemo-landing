@@ -1,0 +1,75 @@
+@use "mixins" as *;
+
+
+@mixin display {
+  font-family: var(--font-condensed);
+  font-weight: 800;
+  font-size: var(--font-5xl);
+  line-height: 1.1;
+  text-transform: uppercase;
+  text-wrap: balance;
+
+  @include mobile {
+    font-size: 40px;
+  }
+}
+
+@mixin heading {
+  font-family: var(--font-condensed);
+  font-weight: 800;
+  font-size: var(--font-3xl); // 48px
+  line-height: 1.1;
+  text-transform: uppercase;
+
+  @include mobile {
+    font-size: 32px;
+  }
+}
+
+
+@mixin title {
+  font-family: var(--font-condensed);
+  font-weight: 700;
+  font-size: var(--font-2xl); // 24px
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+
+@mixin data {
+  font-family: var(--font-condensed);
+  font-weight: 600;
+  font-size: var(--font-lg); // 18px
+  line-height: 1.2;
+}
+
+
+@mixin body-large {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--font-lg); // 18px
+  line-height: 1.5;
+}
+
+@mixin body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--font-md); // 16px
+  line-height: 1.5;
+}
+
+@mixin label {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--font-xs); // 12px
+  line-height: 1.2;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@mixin ui {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: var(--font-sm); // 14px
+  line-height: 1.2;
+}
