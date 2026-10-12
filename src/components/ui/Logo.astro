@@ -1,0 +1,21 @@
+<span class="logo">
+    <span class="surf">SURF</span>
+    <span class="memo">MEMO</span>
+</span>
+
+<style lang="scss">
+    @use "../../styles/typography.scss" as *;
+
+    .logo {
+        @include title;
+        display: inline-flex;
+    }
+
+    .surf {
+        color: var(--text-sea-mist);
+    }
+
+    .memo {
+        color: var(--accent-ocean-blue);
+    }
+</style>

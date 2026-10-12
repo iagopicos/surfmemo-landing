@@ -1,0 +1,35 @@
+---
+interface Props {
+    title: string;
+    text: string;
+}
+const { title, text } = Astro.props;
+---
+
+<div class="chip">
+    <p class="title">{title}</p>
+    <p class="text">{text}</p>
+</div>
+
+<style lang="scss">
+    @use "../../styles/typography" as *;
+
+    .chip {
+        display: inline-flex;
+        flex-direction: column;
+        gap: var(--spacing-xs);
+        padding: var(--spacing-sm);
+        background-color: var(--bg-dark-wave);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-sm);
+    }
+    .title {
+        @include label;
+        color: var(--text-grey);
+    }
+
+    .text {
+        @include data;
+        color: var(--text-sea-mist);
+    }
+</style>

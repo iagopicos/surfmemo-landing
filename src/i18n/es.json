@@ -1,0 +1,56 @@
+{
+    "meta": {
+        "title": "SurfMemo · Tu diario de surf con previsión",
+        "description": "Registra cada sesión con las olas, el periodo y el viento que hubo. Cuando la previsión vuelva a parecerse, lo verás venir."
+    },
+    "nav": {
+        "langSwitchLabel": "Cambiar idioma"
+    },
+    "hero": {
+        "title": "Guarda cada sesión. Anticipa la siguiente.",
+        "subtitle": "Registra cada sesión con las olas, el periodo y el viento que hubo. Cuando la previsión vuelva a parecerse, lo verás venir.",
+        "status": "Próximamente en iOS y Android",
+        "phonePlaceholder": "Captura de la app",
+        "chips": {
+            "forecast": {
+                "label": "Previsión",
+                "value": "Playa Larga · 1,4 m · 11 s"
+            },
+            "session": {
+                "label": "Sesión",
+                "value": "12 mar · ★★★★"
+            },
+            "wind": {
+                "label": "Viento",
+                "value": "Offshore · 8 km/h"
+            }
+        }
+    },
+    "features": {
+        "eyebrow": "Funciones",
+        "title": "Antes y después de cada sesión",
+        "intro": "Mira la previsión antes de entrar, apunta la sesión al salir y deja que tu historial haga el resto.",
+        "cards": [
+            {
+                "title": "Previsión por spot",
+                "description": "Altura de ola, periodo, dirección del swell y viento en tus spots, hora a hora. Útil desde el primer día."
+            },
+            {
+                "title": "Diario de sesiones",
+                "description": "Apunta dónde surfeaste, cuánto tiempo y cómo te fue. Las condiciones de ese momento se guardan solas."
+            },
+            {
+                "title": "Aprende de tus sesiones",
+                "description": "Con cada sesión, la previsión gana contexto: verás qué condiciones te dieron tus mejores días."
+            }
+        ]
+    },
+    "closing": {
+        "title": "Cada sesión cuenta.",
+        "badge": "Próximamente"
+    },
+    "footer": {
+        "email": "hola@surfmemo.app",
+        "copyright": "© 2026 SurfMemo"
+    }
+}
