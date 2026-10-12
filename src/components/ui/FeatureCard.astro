@@ -1,0 +1,40 @@
+---
+interface Props {
+    number: string;
+    title: string;
+    description: string;
+}
+const { number, title, description } = Astro.props;
+---
+
+<article class="feature-card">
+    <span class="number">{number}</span>
+    <h2 class="title">{title}</h2>
+    <h3 class="description">{description}</h3>
+</article>
+
+<style lang="scss">
+    @use "../../styles/typography" as *;
+    .feature-card {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-l);
+        background-color: var(--bg-dark-wave);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-lg);
+    }
+    .number {
+        @include data;
+        color: var(--accent-ocean-blue);
+    }
+
+    .title {
+        @include title;
+    }
+
+    .description {
+        @include body;
+        color: var(--text-grey);
+    }
+</style>
