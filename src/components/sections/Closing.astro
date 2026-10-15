@@ -1,0 +1,33 @@
+---
+import Badge from "@/components/ui/Badge.astro";
+import { getDictionary, type Lang } from "@/i18n/utils";
+
+interface Props {
+    lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = getDictionary(lang);
+---
+
+<section class="closing">
+    <h2 class="title">{t.closing.title}</h2>
+    <Badge text={t.closing.badge} />
+</section>
+
+<style lang="scss">
+    @use "../../styles/typography" as *;
+
+    .closing {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-md);
+        padding: var(--spacing-xxxl) var(--spacing-xxl);
+        text-align: center;
+    }
+
+    .title {
+        @include display;
+    }
+</style>

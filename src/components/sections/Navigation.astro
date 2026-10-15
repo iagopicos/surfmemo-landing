@@ -1,0 +1,27 @@
+---
+import Logo from "@/components/ui/Logo.astro";
+import LangSwitch from "@/components/ui/LangSwitch.astro";
+import { getDictionary, type Lang } from "@/i18n/utils";
+
+interface Props {
+    lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = getDictionary(lang);
+---
+
+<header class="navigation">
+    <Logo />
+    <LangSwitch lang={lang} label={t.nav.langSwitchLabel} />
+</header>
+
+<style lang="scss">
+    .navigation {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+        padding-inline: var(--spacing-xxl);
+    }
+</style>

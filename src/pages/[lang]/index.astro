@@ -1,12 +1,11 @@
 ---
 import Base from "@/layouts/Base.astro";
 import { languages, getDictionary, isLang } from "@/i18n/utils";
-import Logo from "@/components/ui/Logo.astro";
-import Badge from "@/components/ui/Badge.astro";
-import Chip from "@/components/ui/Chip.astro";
-import LangSwitch from "@/components/ui/LangSwitch.astro";
-import FeatureCard from "@/components/ui/FeatureCard.astro";
-
+import Navigation from "@/components/sections/Navigation.astro";
+import Hero from "@/components/sections/Hero.astro";
+import Features from "@/components/sections/Features.astro";
+import Closing from "@/components/sections/Closing.astro";
+import Footer from "@/components/sections/Footer.astro";
 export function getStaticPaths() {
     return Object.keys(languages).map((lang) => ({ params: { lang } }));
 }
@@ -18,18 +17,11 @@ const t = getDictionary(lang);
 ---
 
 <Base lang={lang} title={t.meta.title} description={t.meta.description}>
-    <h1>{t.hero.title}</h1>
-    <p>{t.hero.subtitle}</p>
-    <Logo />
-    <Badge text={t.hero.status} />
-    <Chip
-        title={t.hero.chips.session.label}
-        text={t.hero.chips.session.value}
-    />
-    <LangSwitch lang={lang} label={t.nav.langSwitchLabel} />
-    <FeatureCard
-        number={"01"}
-        title={t.features.cards[0].title}
-        description={t.features.cards[0].description}
-    />
+    <Navigation lang={lang} />
+    <main>
+        <Hero lang={lang} />
+        <Features lang={lang} />
+        <Closing lang={lang} />
+    </main>
+    <Footer lang={lang} />
 </Base>

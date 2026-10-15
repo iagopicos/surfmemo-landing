@@ -1,0 +1,77 @@
+---
+import FeatureCard from "@/components/ui/FeatureCard.astro";
+import { getDictionary, type Lang } from "@/i18n/utils";
+
+interface Props {
+    lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = getDictionary(lang);
+---
+
+<section class="features">
+    <div class="feature-headers">
+        <div class="header-left">
+            <p class="eyebrow">{t.features.eyebrow}</p>
+            <h2 class="title">{t.features.title}</h2>
+        </div>
+        <p class="intro">{t.features.intro}</p>
+    </div>
+
+    <div class="feature-cards">
+        {t.features.cards.map((card, index) => (
+            <FeatureCard
+                number={String(index + 1).padStart(2, "0")}
+                title={card.title}
+                description={card.description}
+            />
+        ))}
+    </div>
+</section>
+
+<style lang="scss">
+    @use "../../styles/typography" as *;
+
+    .features {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xl);
+        padding: var(--spacing-xxxl) var(--spacing-xxl);
+        background-color: var(--bg-night-sea);
+    }
+
+    .feature-headers {
+        display: flex;
+        align-items: flex-end;
+        gap: var(--spacing-xxl);
+    }
+
+    .header-left {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .eyebrow {
+        @include label;
+        color: var(--accent-ocean-blue);
+    }
+
+    .title {
+        @include heading;
+    }
+
+    .intro {
+        flex: 1;
+        @include body-large;
+        color: var(--text-wet-sand);
+    }
+
+    .feature-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-lg);
+    }
+</style>

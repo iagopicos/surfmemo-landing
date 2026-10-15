@@ -1,0 +1,93 @@
+---
+import Badge from "@/components/ui/Badge.astro";
+import Chip from "@/components/ui/Chip.astro";
+import Phone from "@/components/ui/Phone.astro";
+import { getDictionary, type Lang } from "@/i18n/utils";
+
+interface Props {
+    lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = getDictionary(lang);
+const { chips } = t.hero;
+---
+
+<section class="hero">
+    <div class="hero-text">
+        <h1 class="title">{t.hero.title}</h1>
+        <p class="subtitle">{t.hero.subtitle}</p>
+        <Badge text={t.hero.status} />
+    </div>
+
+    <div class="hero-visual">
+        <Phone placeholder={t.hero.phonePlaceholder} />
+        <div class="chip-forecast">
+            <Chip title={chips.forecast.label} text={chips.forecast.value} />
+        </div>
+        <div class="chip-session">
+            <Chip title={chips.session.label} text={chips.session.value} />
+        </div>
+        <div class="chip-wind">
+            <Chip title={chips.wind.label} text={chips.wind.value} />
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+    @use "../../styles/typography" as *;
+
+    .hero {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-xxl);
+        height: 800px;
+        padding-inline: var(--spacing-xxl);
+    }
+
+    .hero-text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+    }
+
+    .title {
+        @include display;
+    }
+
+    .subtitle {
+        @include body-large;
+        color: var(--text-wet-sand);
+    }
+
+    .hero-visual {
+        flex: 1;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .chip-forecast,
+    .chip-session,
+    .chip-wind {
+        position: absolute;
+    }
+
+    .chip-forecast {
+        top: 120px;
+        left: 0;
+    }
+
+    .chip-session {
+        top: 320px;
+        right: 0;
+    }
+
+    .chip-wind {
+        bottom: 120px;
+        left: 40px;
+    }
+</style>

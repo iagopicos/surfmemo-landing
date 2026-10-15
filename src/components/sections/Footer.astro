@@ -1,0 +1,43 @@
+---
+import Logo from "@/components/ui/Logo.astro";
+import { getDictionary, type Lang } from "@/i18n/utils";
+
+interface Props {
+    lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = getDictionary(lang);
+---
+
+<footer class="footer">
+    <Logo />
+    <div class="footer-info">
+        <a href={`mailto:${t.footer.email}`}>{t.footer.email}</a>
+        <small>{t.footer.copyright}</small>
+    </div>
+</footer>
+
+<style lang="scss">
+    @use "../../styles/typography" as *;
+
+    .footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--spacing-lg) var(--spacing-xxl);
+        background-color: var(--bg-night-sea);
+    }
+
+    .footer-info {
+        @include ui;
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+        color: var(--text-grey);
+    }
+
+    small {
+        font-size: inherit;
+    }
+</style>
